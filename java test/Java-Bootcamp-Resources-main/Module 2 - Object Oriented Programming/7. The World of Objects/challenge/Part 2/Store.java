@@ -4,15 +4,19 @@ public class Store {
 
     public Store() {
         // TODO
+        this.movies=new Movie[10];
     }
 
     public Movie getMovie(int index) {
         // TODO 
-        return null;
+        Movie copy=new Movie(movies[index]);
+        return copy;
     }
 
     public void setMovie(int index, Movie movie) {
         // TODO 
+        Movie copy=new Movie(movie);
+        this.movies[index]=copy;
     }
 
 
