@@ -8,6 +8,9 @@ public class User {
     }
 
     public void setAge(int age) { 
+        if (age<0) {
+            throw new IllegalArgumentException("Age cannot be negetive");
+        }
         this.age = age;
     }
 
@@ -16,6 +19,9 @@ public class User {
     }
 
     public void setUsername(String username) {
+        if (username==null || username.isBlank()) {
+            throw new IllegalArgumentException("Username cannot be null or blank");
+        }
         this.username = username;
     }
 

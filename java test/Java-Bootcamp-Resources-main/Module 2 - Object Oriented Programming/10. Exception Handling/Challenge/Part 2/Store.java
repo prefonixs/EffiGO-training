@@ -2,11 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Store {
-
     private List<Movie> movies;
 
     public Store() {
-        this.movies = new ArrayList<>();
+        this.movies = new ArrayList<Movie>();
     }
 
     public Movie getMovie(int index) {
@@ -24,7 +23,7 @@ public class Store {
     public String toString() {
         String temp = "";
         for (Movie movie : movies) {
-            temp += movie.toString() + "\n";
+            temp += movie.toString();
         }
         return temp;
     }

@@ -1,11 +1,9 @@
-import java.util.Objects;
-
 public class Book {
-
     private String title;
     private String author;
     private double rating;
     private double price;
+
 
     public Book(String title, String author, double rating, double price) {
         this.title = title;
@@ -13,7 +11,6 @@ public class Book {
         this.rating = rating;
         this.price = price;
     }
-
     public Book(Book source) {
         this.title = source.title;
         this.author = source.author;
@@ -53,15 +50,4 @@ public class Book {
         this.price = price;
     }
 
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Book)) {
-            return false;
-        }
-        Book book = (Book) o;
-        return Objects.equals(title, book.title) && Objects.equals(author, book.author) && rating == book.rating && price == book.price;
-    }
-
-    
 }
