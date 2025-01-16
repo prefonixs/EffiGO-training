@@ -13,6 +13,12 @@ public abstract class LabEquipment {
         setYear(year);
     }
 
+    public LabEquipment(LabEquipment labEquipment) {
+        setManufacturer(labEquipment.getManufacturer());
+        setModel(labEquipment.getModel());
+        setYear(labEquipment.getYear());
+    }
+
     public String getManufacturer() {
         return manufacturer;
     }
@@ -47,4 +53,6 @@ public abstract class LabEquipment {
     }
 
     public abstract String performMaintenance();
+
+    public abstract LabEquipment clone();
 }

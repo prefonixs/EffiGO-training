@@ -5,6 +5,12 @@ public class Pants extends Product{
     private int waist;
     private int length;
 
+    public Pants(double price, String color, String brand,int waist, int length) {
+        super(price, color, brand);
+        this.waist = waist;
+        this.length = length;
+    }
+
     public int getWaist() {
         return this.waist;
     }
@@ -19,5 +25,16 @@ public class Pants extends Product{
 
     public void setLength(int length) {
         this.length = length;
+    }
+
+    @Override
+    public void fold() {
+        super.fold();
+        System.out.println("Fold pants like a pant");
+    }
+
+    @Override
+    public void wear() {
+        System.out.println("The "+waist+" "+length+" pant looks great!");
     }
 }

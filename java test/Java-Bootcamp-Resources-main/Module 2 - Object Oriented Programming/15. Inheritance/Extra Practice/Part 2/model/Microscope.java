@@ -10,6 +10,11 @@ public class Microscope extends LabEquipment {
         setMagnification(magnification);
     }
 
+    public Microscope(Microscope microscope) {
+        super(microscope);
+        setMagnification(microscope.getMagnification());
+    }
+
     public int getMagnification() {
         return magnification;
     }
@@ -24,5 +29,10 @@ public class Microscope extends LabEquipment {
     @Override
     public String performMaintenance() {
         return "Microscope maintenance: Clean the lenses and check the light source.";
+    }
+
+    @Override
+    public LabEquipment clone() {
+        return new Microscope(this);
     }
 }

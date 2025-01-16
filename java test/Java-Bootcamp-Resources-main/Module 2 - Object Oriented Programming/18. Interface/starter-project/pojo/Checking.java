@@ -19,4 +19,10 @@ public class Checking extends Account {
         this.balance = balance;
     }
 
+    @Override
+    public Account clone() {
+        // TODO Auto-generated method stub
+        return new Checking(super.getId(), balance);
+    }
+
 }

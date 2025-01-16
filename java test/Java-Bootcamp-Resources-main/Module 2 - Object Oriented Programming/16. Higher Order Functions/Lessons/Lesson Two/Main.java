@@ -5,7 +5,9 @@ public class Main {
     public static void main(String[] args) {
 
         List<Integer> integers = Arrays.asList(25, 19, 23, 45, 38, 23, 59, 12);
+        integers.sort((right,left)->right.compareTo(left));
 
+        System.out.println(integers);
 
     }
 
