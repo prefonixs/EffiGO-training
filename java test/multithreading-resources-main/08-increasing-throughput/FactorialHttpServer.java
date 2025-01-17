@@ -3,6 +3,8 @@ import com.sun.net.httpserver.HttpExchange;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class FactorialHttpServer {
 
@@ -10,6 +12,10 @@ public class FactorialHttpServer {
         // Create an HTTP server listening on port 8080
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
 
+        int numThreads=Runtime.getRuntime().availableProcessors()*2;
+        System.out.println(numThreads);
+
+        server.setExecutor(Executors.newFixedThreadPool(numThreads));
         // Create a context that listens for requests on /factorial
         server.createContext("/factorial", (HttpExchange exchange) -> {
             try {

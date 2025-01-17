@@ -1,6 +1,6 @@
 public class DataRaceExample {
 
-    public static boolean flag;
+    public static volatile boolean flag;
 
     public static void main(String[] args) throws InterruptedException {
 

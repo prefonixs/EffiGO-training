@@ -1,12 +1,20 @@
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class RaceConditionExample {
-    public static int count = 0;
+    // public static AtomicInteger count = new AtomicInteger(0);
+    public static int count=0;
+    public static Object lock=new Object();
 
     public static void increment() {
-        count++; // Non-atomic increment can cause race condition
+        synchronized(lock){
+            count++; // Non-atomic increment can cause race condition
+        }
+        // count.incrementAndGet();
     }
 
     public static int getCount() {
         return count;
+        // return count.get();
     }
 
     public static void main(String[] args) throws InterruptedException {
